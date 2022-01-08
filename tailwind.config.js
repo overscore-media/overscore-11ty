@@ -40,6 +40,9 @@ module.exports = {
           greenwich: '#59CFA2',
           darkish: '#313235'
         },
+        height: {
+          portcard: '40rem',
+        },
         fontFamily: {
           'aldrich': ['Aldrich', 'sans-serif'],
           'heading': ['Staatliches', 'monospace'],

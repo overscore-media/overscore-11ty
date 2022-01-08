@@ -1,0 +1,14 @@
+---
+layout: default
+---
+
+<div class="flex items-center justify-center w-screen h-screen bg-magentish">
+
+<div class="flex flex-col items-center justify-center w-screen h-screen bg-overdark">
+
+{% for post in collections.service_examples %}
+<a class="text-white" href="{{ post.url }}">{{ post.data.title }}</a>
+{% endfor %}
+</div>
+
+</div>

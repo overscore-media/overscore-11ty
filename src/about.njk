@@ -1,0 +1,149 @@
+---
+layout: default.njk
+---
+
+<style>
+    /*
+    Adapted from polarnotion.github.io/starwarsintro by Polar Notion [http://polarnotion.com/]
+    */
+
+    body,
+    html {
+        height: 100%;
+        min-height: 100vh;
+        margin: 0;
+    }
+
+    .crawl--wrapper {
+        width: 100%;
+        height: 100%;
+        font-weight: 700;
+        color: #EBD71C;
+        background-color: #000;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .crawl--wrapper .crawl--content {
+        margin-left: auto;
+        margin-right: auto;
+        position: absolute;
+        z-index: 3;
+        width: 98%;
+        height: 50em;
+        bottom: 0;
+        font-size: 80px;
+        font-weight: bold;
+        text-align: justify;
+        overflow: hidden;
+        transform-origin: 50% 100%;
+        transform: perspective(350px) rotateX(25deg);
+    }
+
+    .crawl--wrapper .crawl--content:after {
+        position: absolute;
+        content: ' ';
+        top: 0;
+        bottom: 60%;
+        background-image: linear-gradient(top, rgba(0,0,0,1) 0%, transparent 100%);
+        pointer-events: none;
+    }
+
+    .crawl--wrapper .crawl--text {
+        position: absolute;
+        top: 100%;
+        animation: scroll 120s linear 4s forwards;
+    }
+
+    .crawl--wrapper .crawl--text > .crawl--title {
+        text-align: center;
+    }
+
+    .crawl--wrapper .crawl--logo {
+        position: absolute;
+        width: 2.6em;
+        left: 50%;
+        top: 20vh;
+        font-size: 10em;
+        text-align: center;
+        margin-left: -1.3em;
+        line-height: 0.8em;
+        letter-spacing: -0.05em;
+        text-shadow: -2px -2px 0 #EBD71C, 2px -2px 0 #EBD71C, -2px 2px 0 #EBD71C, 2px 2px 0 #EBD71C;
+        opacity: 0;
+        z-index: 1;
+        animation: logo 5s ease-out 2.5s;
+    }
+
+    .crawl--wrapper .crawl--logo > img {
+        max-width: 100%;
+    }
+
+    @keyframes logo {
+        0% {
+            transform: scale(1);
+            opacity: 1;
+        }
+        50% {
+            opacity: 1;
+        }
+        100% {
+            transform: scale(0.1);
+            opacity: 0;
+        }
+    }
+
+    @keyframes scroll {
+        0% {
+            top: 100%;
+        }
+        100% {
+            top: -170%;
+        }
+    }
+
+    @media screen and (max-width: 720px) {
+        .crawl--wrapper .crawl--content {
+            font-size: 35px;
+        }
+        .crawl--wrapper .crawl--text {
+            position: absolute;
+            top: 100%;
+            animation: scroll 100s linear 4s forwards;
+        }
+    }
+</style>
+
+<!-- Place in Body where you'd like intro to appear -->
+<div class="absolute shadow-2xl crawl--wrapper">
+
+  <div x-data class="absolute z-0 w-screen h-screen" aria-hidden="true">
+    <video playsinline autoplay muted loop class="w-full">
+      <source src="/stars.mp4" type="video/mp4" />
+    </video>
+  </div>
+
+    <!-- Logo Image or Text goes in here -->
+    <h2 class="crawl--logo">
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 512.818 85.378">
+            <path fill="#CF5986" fill-opacity="1" d="M10 15 0 25v20l5 5-5 5v20l10 10h29.725l10-10V25l-10-10zm1.058 11.058h27.609v47.883H11.058zm352.585 9.32-10 10v29.725l10 10h29.725l10-10V45.378l-10-10zm0 10h30v30h-30zM154.506 75.103l10 10h-49.725V35.378h49.725v20l-10 10h-30l10-10h20v-10h-29.725v29.725zm20 10h10V45.378h29.726l10-10h-49.726zm238.862 0h10V45.378h29.725l10-10h-49.725zm59.725-10h29.726l10 10h-49.726V45.378l10-10h39.726v20l-10 10h-30l10-10h20v-10h-29.726zm-119.451 10-10-10h-29.725V45.378h29.725l10-10h-49.725v49.725zM0 8.942h40.784L49.725 0H0Zm214.232 76.161h79.685V50.858l-49.685-16.35v-9.13h49.685v-10h-59.685v25.48l49.685 16.35v17.895h-59.685Z"/>
+            <path fill="#CF5986" fill-opacity="1" d="M59.725 35.378v50h29.233l15.767-15.767V35.378h-10v30l-10 10h-15v-40Z"/>
+        </svg>
+    </h2>
+
+    <!-- All Scrolling Content Goes in here -->
+    <div class="crawl--content">
+
+        <div class="crawl--text">
+            <p class="crawl--title font-aldrich">OverScore Média Corporation</p>
+            <br>
+            <p class="crawl--paragraph">
+                In a world dominated by string-pulling corporations, hordes of freelancers claw and scratch at aspirations of entrepreneurial glory… Only to be crushed by the machinations of Big Tech - or worse, to join their ranks! As hope of creative independence fades from existence, a collection of talented coders join forces in the North. Their goals?
+                To construct an organization formidable enough to drive back the advances of Big Tech and amplify the voices of SMEs across the globe! To dream up brilliant software solutions fit to conquer the world of tomorrow! And to spread their noble cause throughout the lands, inspiring ever more entrepreneurs to join their cause! Will they manage to carve through the competition and make a name for themselves in this maelstrom of an industry? Only time will tell...
+            </p>
+        </div>
+    </div>
+</div>
+
+<div class="w-screen min-h-screen bg-overdark">
+</div>

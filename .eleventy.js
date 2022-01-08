@@ -2,6 +2,7 @@ const fs = require("fs");
 const htmlmin = require("html-minifier");
 const pluginSEO = require("eleventy-plugin-seo");
 
+const { DateTime } = require("luxon");
 
 module.exports = function(eleventyConfig) {
 
@@ -20,6 +21,15 @@ module.exports = function(eleventyConfig) {
   // SEO stuff
   eleventyConfig.addPlugin(pluginSEO, require("./src/_data/seo.json"));
 
+  // Service examples collection
+  eleventyConfig.addCollection("service_examples", function(collectionApi) {
+    return collectionApi.getAll().filter((item) => item.inputPath.startsWith('./src/services/examples/'));
+  });
+
+  // Date formatting filter
+  eleventyConfig.addFilter("postDate", (dateObj) => {
+    return DateTime.fromJSDate(dateObj).toLocaleString(DateTime.DATE_MED);
+  });
 
   var pathPrefix = "";
   if (process.env.GITHUB_REPOSITORY) {

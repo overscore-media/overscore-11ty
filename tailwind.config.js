@@ -43,6 +43,9 @@ module.exports = {
         height: {
           portcard: '40rem',
         },
+        height: {
+          portcard: '40rem',
+        },
         fontFamily: {
           'aldrich': ['Aldrich', 'sans-serif'],
           'heading': ['Staatliches', 'monospace'],

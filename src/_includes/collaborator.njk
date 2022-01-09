@@ -55,11 +55,9 @@ image: /opengraph.png
             </div>
         </div>
 
-        <div class="flex justify-center w-screen min-h-screen pt-24 text-white bg-overdark">
+        <div class="flex flex-col items-center justify-center w-screen min-h-screen py-12 text-white bg-overdark">
+            <img src="{{ picture }}" class="object-scale-down h-64 pb-6" alt="Profile Picture" loading="lazy">
             <div class="prose prose-invert">
-                <h1 class="text-center">{{ title }}</h1>
-                <hr class="mt-1 mb-3"/>
-                <h2 class="mb-10 text-center">Published {{ page.date | postDate }}</h2>
                 {{ content | safe }}
             </div>
         </div>

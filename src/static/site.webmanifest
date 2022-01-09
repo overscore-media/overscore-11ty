@@ -13,7 +13,8 @@
             "type": "image/png"
         }
     ],
-    "theme_color": "#0a3f1f",
-    "background_color": "#0a3f1f",
+    "theme_color": "#262626",
+    "background_color": "#262626",
+    "start_url": "https://overscore.media",
     "display": "standalone"
 }

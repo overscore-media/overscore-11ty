@@ -2,6 +2,8 @@
 layout: default.njk
 ---
 
+<link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+
 <style>
     /*
     Adapted from polarnotion.github.io/starwarsintro by Polar Notion [http://polarnotion.com/]
@@ -117,11 +119,11 @@ layout: default.njk
 <!-- Place in Body where you'd like intro to appear -->
 <div class="absolute shadow-2xl crawl--wrapper">
 
-  <div x-data class="absolute z-0 w-screen h-screen" aria-hidden="true">
-    <video playsinline autoplay muted loop class="w-full">
-      <source src="/stars.mp4" type="video/mp4" />
-    </video>
-  </div>
+    <div x-data class="absolute z-0 w-screen h-screen" aria-hidden="true">
+        <video playsinline autoplay muted loop class="w-full">
+            <source src="/stars.mp4" type="video/mp4"/>
+        </video>
+    </div>
 
     <!-- Logo Image or Text goes in here -->
     <h2 class="crawl--logo">
@@ -136,14 +138,134 @@ layout: default.njk
 
         <div class="crawl--text">
             <p class="crawl--title font-aldrich">OverScore Média Corporation</p>
-            <br>
+            <br/>
             <p class="crawl--paragraph">
-                In a world dominated by string-pulling corporations, hordes of freelancers claw and scratch at aspirations of entrepreneurial glory… Only to be crushed by the machinations of Big Tech - or worse, to join their ranks! As hope of creative independence fades from existence, a collection of talented coders join forces in the North. Their goals?
-                To construct an organization formidable enough to drive back the advances of Big Tech and amplify the voices of SMEs across the globe! To dream up brilliant software solutions fit to conquer the world of tomorrow! And to spread their noble cause throughout the lands, inspiring ever more entrepreneurs to join their cause! Will they manage to carve through the competition and make a name for themselves in this maelstrom of an industry? Only time will tell...
+                In a world dominated by string-pulling corporations, hordes of freelancers claw and scratch at aspirations of entrepreneurial glory… Only to be crushed by the machinations of Big Tech - or worse, to join their ranks!
+                <br/>
+                <br/>
+                As hope of creative independence fades from existence, a collection of talented coders join forces in the North. Their goals?
+                To construct an organization formidable enough to drive back the advances of Big Tech and amplify the voices of SMEs across the globe! To dream up brilliant software solutions fit to conquer the world of tomorrow! And to spread their noble cause throughout the lands, inspiring ever more entrepreneurs to join their cause!
+                <br/>
+                <br/>
+                Will they manage to carve through the competition and make a name for themselves in this maelstrom of an industry? Only time will tell...
             </p>
         </div>
     </div>
 </div>
 
-<div class="w-screen min-h-screen bg-overdark">
+<div class="w-screen min-h-screen pb-12 bg-overdark">
+
+    <div class="flex justify-center py-8">
+        <div class="prose prose-invert">
+
+            {% renderTemplate "md" %}
+In a world dominated by string-pulling corporations, hordes of freelancers claw and scratch at aspirations of entrepreneurial glory… Only to be crushed by the machinations of Big Tech - or worse, to join their ranks!
+
+As hope of creative independence fades from existence, a collection of talented coders join forces in the North. Their goals?
+To construct an organization formidable enough to drive back the advances of Big Tech and amplify the voices of SMEs across the globe! To dream up brilliant software solutions fit to conquer the world of tomorrow! And to spread their noble cause throughout the lands, inspiring ever more entrepreneurs to join their cause!
+            
+Will they manage to carve through the competition and make a name for themselves in this maelstrom of an industry? Only time will tell...
+
+## How We Started:
+
+OverScore Media was founded by two Trent University students, whose original intent was to back all of their entrepreneurial endeavours under a singular legal business name. After realizing the potential to grow this business into a fully-fledged software and digital design agency, they set their sights on building a central hub of talented creators to help local businesses upgrade every aspect of their online presence - and beyond. Since then, our team has grown into a network of Trent University students and alumni from Business Admin and CompSci, and other software professionals with an urge to create, and extra time on their hands to help us out 😊. So far, our team spans three continents!
+
+## What We Do:
+OverScore Media is currently dedicated to the following activities: 
+
+### **Completing Contracts for our Clients [Businesses and Individuals]:**
+
+In order to generate capital for the company, our members work with each other to provide a number of business development <a href="/services">services</a> to improve our clients' online presences. Our step-by-step process is:
+
+1. Our clients can make service requests via our <a href="#contact--us">contact form</a> or through DM'ing us on social media. Once the request is received, an OverScore Project Manager will conduct a free, comprehensive consultation with them to acquire project specifications, and discuss a general estimate for timing and pricing. 
+
+2. The Project Manager will then compose a team of hand-picked members of the OverScore team [themselves independent contractors who we sub-contract from time-to-time for the projects we know they're best at], allocate roles, distribute contracts, and initialize the project!
+
+3. Practicing Agile development techniques, teams start pushing features and receiving feedback in divided iterations or "sprints".
+
+4. Once our client's satisfied with the final result, our management team exchanges deliverables, along with a swanky invoice for services completed and payment due. [Note that for many projects a non-refundable deposit may be due at an earlier stage in the process, after requirements have been agreed to but before the work proper starts]
+
+5. Finally, our management team distributes payment to our subcontractors based on the amounts we agreed upon, and the cycle can start afresh!
+
+### **Developing Intra-Company Entrepreneurial Projects:**
+
+As software and business developers on a warpath to glory, we all share the same desire to one day produce the next 'million dollar idea' - [or at least a million one-dollar ideas 😉]. What we really want is to stay "the good guys," and get the OverScore name associated with as many cool and useful projects as we can - altering the landscape of every industry we're a part of for the better in the process. Sure, it's by no means the easiest dream to attain, but that's the true reason we started this company in the first place. Using the income from our design, development, and strategic services, the foundation of our corporation, and the power of our network; we at OverScore plan on constructing as many personal projects as possible.
+
+---
+
+## Our Team
+
+We trust only the finest contractors for our jobs. Here is a full list of our ever-growing team - from code wizards, to artists, and much more!
+
+{% endrenderTemplate %}
+        </div>
+    </div>
+
+    <div class="flex items-center justify-center w-full overflow-hidden">
+        <div class="max-w-screen-lg overflow-hidden">
+            <div class="my-10 swiper">
+                <div class="swiper-wrapper">
+
+                    {% for collaborator in collections.collaborators %}
+
+                        <div class="shadow-sm card bg-darkish text-accent-content swiper-slide">
+                            <figure>
+                                <img src="{{ collaborator.data.picture }}" class="object-scale-down h-52" alt="Profile Picture" loading="lazy">
+                            </figure>
+                            <div class="card-body">
+                                <p class="text-center card-title">{{ collaborator.data.name }}</p>
+                                <hr class="mb-4 border-magentish" />
+                                <ul class="text-white">
+                                    {% for role in collaborator.data.roles | slice(3) %}
+                                        <li>{{ role }}</li>
+                                    {% endfor %}
+                                    {% if collaborator.data.roles | length < 2 %}
+                                        <li>&nbsp;</li>
+                                    {% endif %}
+                                    {% if collaborator.data.roles | length < 3 %}
+                                        <li>&nbsp;</li>
+                                    {% endif %}
+                                </ul>
+                                <div class="card-actions">
+                                    <a href="{{ collaborator.url }}" class="w-full font-bold btn btn-accent text-overdark">Read Bio</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    {% endfor %}
+
+                </div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+        </div>
+    </div>
+
 </div>
+
+<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+
+<script>
+    const swiper = new Swiper('.swiper', {
+        breakpoints: {
+            414: {
+                slidesPerView: 1,
+                spaceBetween: 5
+            },
+            768: {
+                slidesPerView: 3,
+                spaceBetween: 5
+            },
+            1000: {
+                slidesPerView: 3,
+                spaceBetween: 10
+            }
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev'
+        }
+    });
+
+    console.log(swiper)
+</script>

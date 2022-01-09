@@ -1,6 +1,7 @@
 const fs = require("fs");
 const htmlmin = require("html-minifier");
 const pluginSEO = require("eleventy-plugin-seo");
+const { EleventyRenderPlugin } = require("@11ty/eleventy");
 
 const { DateTime } = require("luxon");
 
@@ -21,9 +22,17 @@ module.exports = function(eleventyConfig) {
   // SEO stuff
   eleventyConfig.addPlugin(pluginSEO, require("./src/_data/seo.json"));
 
+  // For rendering inline markdown
+  eleventyConfig.addPlugin(EleventyRenderPlugin);
+
   // Service examples collection
   eleventyConfig.addCollection("service_examples", function(collectionApi) {
     return collectionApi.getAll().filter((item) => item.inputPath.startsWith('./src/services/examples/'));
+  });
+
+  // Collaborator profiles collection
+  eleventyConfig.addCollection("collaborators", function(collectionApi) {
+    return collectionApi.getAll().filter((item) => item.inputPath.startsWith('./src/collaborators/'));
   });
 
   // Date formatting filter

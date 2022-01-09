@@ -26,6 +26,8 @@ image: /opengraph.png
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&family=Staatliches&display=swap" rel="stylesheet">
 
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+
     <link rel="stylesheet" href="/index.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
   </head>
@@ -38,19 +40,23 @@ image: /opengraph.png
       </div>
       <div class="flex px-2 mx-2 lg:flex-none">
         <nav class="flex items-stretch">
-          <a class="font-normal btn btn-ghost btn-sm rounded-btn font-aldrich" href="/services">Services</a>
-          <a class="font-normal btn btn-ghost btn-sm rounded-btn font-aldrich" href="/about">About</a>
-          <a class="font-normal btn btn-ghost btn-sm rounded-btn font-aldrich" href="#contact--us">Contact</a>
+          <a class="font-normal btn btn-ghost btn-md rounded-btn font-aldrich" href="/services">Services</a>
+          <a class="font-normal btn btn-ghost btn-md rounded-btn font-aldrich">About</a>
+          <a class="font-normal btn btn-ghost btn-md rounded-btn font-aldrich" href="#contact--us">Contact</a>
         </nav>
       </div>
     </div>
 
     <div id="contact--us" class="modal">
-      <div class="bg-overdark modal-box">
-        <p class="text-white">Enim dolorem dolorum omnis atque necessitatibus. Consequatur aut adipisci qui iusto illo eaque. Consequatur repudiandae et. Nulla ea quasi eligendi. Saepe velit autem minima.</p>
-        <div class="modal-action">
-          <a href="#" class="btn btn-primary">Accept</a>
-          <a href="#" class="btn">Close</a>
+      <div class="flex flex-col items-center justify-center p-8 bg-overdark modal-box">
+        <p class="text-xl text-center text-white">Looking to get started on your project? Shoot us a message!</p>
+        <p class="text-xl text-center text-white">Email: webmaster@overscore.media</p>
+        <div class="self-end modal-action">
+          <a href="/" class="btn btn-square btn-sm">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-4 h-4 stroke-current">   
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>                       
+          </svg>
+        </a> 
         </div>
       </div>
     </div>

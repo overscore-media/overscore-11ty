@@ -1,5 +1,5 @@
 module.exports = {
-    content: [ "./src/**/*.njk", "./src/*.html" ],
+    content: [ "./src/**/*.njk", "./src/**/*.html" ],
     darkMode: 'media',
     daisyui: {
       // Modify at https://daisyui.com/core/colors
@@ -39,9 +39,6 @@ module.exports = {
           magentish: '#CF5986',
           greenwich: '#59CFA2',
           darkish: '#313235'
-        },
-        height: {
-          portcard: '40rem',
         },
         height: {
           portcard: '40rem',

@@ -1,14 +1,20 @@
 ---
 layout: service.njk
 title: Archives of Ajinor
+banner: /images/projects/ajinor/ajinor-banner.png
+description: In the first age, in the first battle, when the shadows first lengthened, one stood. Burned by the embers of Armageddon, his soul blistered by the fires of Hell and tainted beyond ascension, he chose the path of perpetual torment.
 date: 2020-01-08
 ---
 
 In the first age, in the first battle, when the shadows first lengthened, one stood. Burned by the embers of Armageddon, his soul blistered by the fires of Hell and tainted beyond ascension, he chose the path of perpetual torment.
 
+![banner](/images/projects/ajinor/ajinor-banner.png "Some caption goes here")
+
 In his ravenous hatred he found no peace, and with boiling blood he scoured the Umbral Plains seeking vengeance against the dark lords who had wronged him.
 
 He wore the crown of the Night Sentinels, and those that tasted the bite of his sword named him... the Doom Slayer.
+
+https://www.youtube.com/watch?v=bWu5X4jcvv8
 
 Tempered by the fires of Hell, his iron will remained steadfast through the passage that preys upon the weak. For alone he was the Hell Walker, the Unchained Predator, who sought retribution in all quarters, dark and light, fire and ice, in the beginning and the end, and he hunted the slaves of Doom with barbarous cruelty; for he passed through the divide as none but demon had before.
 

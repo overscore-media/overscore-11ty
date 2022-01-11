@@ -1,0 +1,32 @@
+principles:
+  - name: Responsiveness
+    content: These days, it's not enough to just make an incredible, professionally-designed website. It also has to look good on a myriad of devices with differing sizes!  From TV to desktop, tablet to mobile, we seek to ensure the sites we make are just as awesome (and just as functional) on a huge range of screens.
+    image: undraw_responsiveness.svg
+
+  - name: Accessibility
+    content: A website is only as good as the experience its users have with it. So it only makes sense to make it the best it can be. No website is can ever truly be well-designed without being accessible.  Accessibility is super important (and in some cases it's the law), so we design with WCAG 2.1 AA compliance at the top of our minds.
+    image: undraw_accessibility.svg
+
+  - name: Integrity
+    content: Your website is your message. We'll help you align it with your brand image, core mission, and personality.  At OverScore, we believe that a company or individual's website should be a reflection of them - real, personal, and genuine - down to the nitty-gritty fonts, colours, and animations.
+    image: undraw_integrity.svg
+
+  - name: Performance
+    content: Got time to wait for a clunky old site to load? Didn't think so. Fact is, once you go fast, you never want to go back.  That's why we aim to write low-overhead, high-performance code that'll make your awesome new site load surprisingly quickly, even over satellite internet or emerging 2G, and you won't have to deal with thumb-twiddling lag, even on the slowest of devices.
+    image: undraw_performance.svg
+
+  - name: Usefulness
+    content: We aren't about pretention. At OverScore Media, we make sites that first-and-foremost work. Sure, there's a time and place for embellishment (and we do love taking care of the little details), but user experience is key.  Taking your website to the next level means cutting the cruft, refining what's left, and basking in the glorious result.
+    image: undraw_usefulness.svg
+
+  - name: Ingenuity
+    content: Ever see something so clever it just made you smile? That's our bread and butter...  Forget what you've been told - the web ought to be exciting, stimulating, surprising, and fun. We seek to bring a sense of life to your website in a way that's uniquely "you" through the fun little details.
+    image: undraw_ingenuity.svg
+
+  - name: Customization
+    content: Ever been told that you couldn't have things the way you wanted them? While you can't always get what you want, there's no need to let that stop you from striving for greatness.  We work with you every step of the web development process, so when you choose OverScore, you choose a team of passionate makers striving to cook up something truly special for you, just the way you like it!
+    image: undraw_customization.svg
+    
+  - name: Functionality
+    content: Looking good doesn't cut it - a website's got to do what it was meant to do. At OverScore, we work on making sites that fit the exact needs of your business.  Contact forms, online stores, company blogs, navbars, embedded videos, carousels, photo galleries, cookie banners - whatever you need, we'll work on crafting it, just for you
+    image: undraw_functionality.svg

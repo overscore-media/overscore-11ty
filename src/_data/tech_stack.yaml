@@ -1,0 +1,27 @@
+tech:
+  - name: Figma
+    image: figma.svg
+
+  - name: HTML5
+    image: html5.svg
+
+  - name: Inkscape
+    image: inkscape.svg
+
+  - name: JavaScript
+    image: javascript.svg
+
+  - name: Krtia
+    image: krita.svg
+
+  - name: Node.js
+    image: nodejs.svg
+
+  - name: nuxtjs
+    image: nuxtjs.svg
+
+  - name: sass
+    image: sass.svg
+
+  - name: Vue.js
+    image: vuejs.svg

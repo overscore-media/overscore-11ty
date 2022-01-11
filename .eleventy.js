@@ -2,6 +2,12 @@ const fs = require("fs");
 const htmlmin = require("html-minifier");
 const pluginSEO = require("eleventy-plugin-seo");
 const { EleventyRenderPlugin } = require("@11ty/eleventy");
+const embedYouTube = require("eleventy-plugin-youtube-embed");
+
+const yaml = require('js-yaml')
+
+const markdownIt = require('markdown-it')
+const markdownItImageFigures = require('markdown-it-image-figures')
 
 const { DateTime } = require("luxon");
 
@@ -12,6 +18,22 @@ module.exports = function(eleventyConfig) {
   } else {
     eleventyConfig.setBrowserSyncConfig({ callbacks: { ready: browserSyncReady }});
   }
+
+  // Allow YAML data files
+  eleventyConfig.addDataExtension("yaml", contents => yaml.load(contents));
+
+  // Use modified markdown-it config for markdown rendering
+  eleventyConfig.setLibrary('md', markdownIt({
+    // markdown-it options go here
+  }).use(markdownItImageFigures, {
+    figcaption: true,
+    lazy: true,
+    classes: 'object-scale-down h-64 lg:h-72 w-full flex justify-center items-center',
+    async: true
+  }));
+
+  // Plugin for embedding youtube videos in markdown
+  eleventyConfig.addPlugin(embedYouTube);
 
   // Passthrough
   eleventyConfig.addPassthroughCopy({ "src/static": "." });

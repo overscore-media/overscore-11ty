@@ -34,7 +34,9 @@ image: /opengraph.png
 
         <div class="fixed w-screen mb-2 navbar text-neutral-content">
             <div class="flex-1 px-2 mx-2">
-                <a class="text-lg font-bold" href="/">OverScore</a>
+                <a href="/" aria-name="Return to Homepage">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 49.725 85"><path style="fill:#cf5986;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" d="M10 15 0 25v20l5 5-5 5v20l10 10h29.725l10-10V25l-10-10zm1.059 11.059h27.609V73.94h-27.61ZM0 8.942V0h49.725l-8.941 8.942z"/></svg>
+                </a>
             </div>
             <div class="flex-none hidden px-2 mx-2 lg:flex">
                 <nav class="flex items-stretch">
@@ -55,12 +57,53 @@ image: /opengraph.png
             </div>
         </div>
 
-        <div class="flex flex-col items-center justify-center w-screen min-h-screen py-12 text-white bg-overdark">
-            <img src="{{ picture }}" class="object-scale-down h-64 pb-6" alt="Profile Picture" loading="lazy">
+        <div class="flex justify-center w-screen min-h-screen pt-24 pb-12 text-white bg-overdark">
             <div class="prose prose-invert">
+                <h1 class="text-center">{{ name }}</h1>
+                <hr class="mt-1 mb-3"/>
+                <div class="flex items-center justify-center w-full px-1">
+                    <img src="{{ picture }}" class="object-scale-down h-64 pb-6" alt="Profile Picture" loading="lazy">
+                </div>
+
                 {{ content | safe }}
             </div>
         </div>
+
+        <footer class="p-10 text-white border-t footer bg-overdark border-magentish">
+            <div>
+                <span class="footer-title">Company Information</span>
+                <a class="link link-hover" href="/about">About OverScore</a>
+                <a class="link link-hover" href="/services">Our Services</a>
+                <a class="link link-hover" href="#contact--us">Contact Us</a>
+            </div>
+            <div>
+                <span class="footer-title">Legal and Other</span>
+                <a class="link link-hover">Terms of Service</a>
+                <a class="link link-hover">Privacy Policy</a>
+                <a class="link link-hover">Brand Assets</a>
+            </div>
+        </footer>
+        <footer class="flex flex-col px-2 py-4 text-white md:flex-row-reverse md:px-10 footer bg-overdark">
+            <div class="justify-center w-full md:place-self-center md:justify-self-end md:w-fit">
+                <div class="grid grid-flow-col gap-4">
+                    <a href="https://www.instagram.com/overscore_media/" aria-name="OverScore on Instagram" target="_blank" rel="noopener noreferrer nofollow">
+                        <ion-icon name="logo-instagram" aria-hidden="true" class="text-2xl"></ion-icon>
+                    </a>
+                    <a href="https://www.linkedin.com/company/overscore-media" aria-name="OverScore on LinkedIn" target="_blank" rel="noopener noreferrer nofollow">
+                        <ion-icon name="logo-linkedin" aria-hidden="true" class="text-2xl"></ion-icon>
+                    </a>
+                    <a href="https://github.com/overscore-media" aria-name="OverScore on GitHub" target="_blank" rel="noopener noreferrer nofollow">
+                        <ion-icon name="logo-github" aria-hidden="true" class="text-2xl"></ion-icon>
+                    </a>
+                </div>
+            </div>
+            <div class="items-center justify-center w-full grid-flow-col md:justify-start">
+
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 49.725 85"><path style="fill:#cf5986;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" d="M10 15 0 25v20l5 5-5 5v20l10 10h29.725l10-10V25l-10-10zm1.059 11.059h27.609V73.94h-27.61ZM0 8.942V0h49.725l-8.941 8.942z"/></svg>
+
+                <a href="/" class="text-center md:text-left font-aldrich">OverScore Media Corporation</a>
+            </div>
+        </footer>
 
         <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>

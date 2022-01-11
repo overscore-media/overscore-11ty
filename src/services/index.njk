@@ -1,0 +1,239 @@
+---
+layout: default
+---
+
+<link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+
+<main class="w-screen min-h-screen bg-overdark">
+
+    <h3 class="pt-10 text-3xl font-semibold text-center text-white font-aldrich">Our Collaborators</h3>
+
+    <div class="flex items-center justify-center w-full mb-12 overflow-hidden">
+        <div class="max-w-screen-lg overflow-hidden">
+            <div class="my-10 swiper collaborators">
+                <div class="swiper-wrapper">
+
+                    {% for collaborator in collections.collaborators %}
+
+                        <div class="shadow-sm card bg-darkish text-accent-content swiper-slide">
+                            <figure>
+                                <img src="{{ collaborator.data.picture }}" class="object-scale-down h-52" alt="Profile Picture" loading="lazy">
+                            </figure>
+                            <div class="card-body">
+                                <p class="text-center card-title">{{ collaborator.data.name }}</p>
+                                <hr class="mb-4 border-magentish"/>
+                                <ul class="text-white">
+                                    {% for role in collaborator.data.roles | slice(3) %}
+                                        <li>{{ role }}</li>
+                                    {% endfor %}
+                                    {% if collaborator.data.roles | length < 2 %}
+                                        <li>&nbsp;</li>
+                                    {% endif %}
+                                    {% if collaborator.data.roles | length < 3 %}
+                                        <li>&nbsp;</li>
+                                    {% endif %}
+                                </ul>
+                                <div class="card-actions">
+                                    <a href="{{ collaborator.url }}" class="w-full font-bold btn btn-accent text-overdark">Read Bio</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    {% endfor %}
+
+                </div>
+                <div class="collaborators--prev swiper-button-prev"></div>
+                <div class="collaborators--next swiper-button-next"></div>
+            </div>
+        </div>
+    </div>
+
+    <h3 class="text-3xl font-semibold text-center text-white font-aldrich">Our Tech Stack</h3>
+
+    <div class="flex items-center justify-center w-full mb-12 overflow-hidden">
+        <div class="max-w-screen-lg overflow-hidden">
+            <div class="h-32 my-10 swiper tech--stack">
+                <div class="swiper-wrapper">
+
+                    {% for item in tech_stack.tech %}
+                        <div class="flex flex-col items-center justify-center swiper-slide">
+                            <img src="/images/techstack/{{ item.image }}" class="h-3/4" alt="{{ item.name }}">
+                            <p class="w-full pt-2 text-xl font-light text-center uppercase text-greenwich h-1/4 font-aldrich">
+                                {{ item.name }}
+                            </p>
+                        </div>
+                    {% endfor %}
+
+                    </div>
+                    <div class="swiper-button-prev tech--stack--prev"></div>
+                    <div class="swiper-button-next tech--stack--next"></div>
+                </div>
+            </div>
+        </div>
+
+        <h3 class="text-3xl font-semibold text-center text-white font-aldrich">Our Driving Principles</h3>
+
+        <div class="flex items-center justify-center w-full mb-12 overflow-hidden">
+            <div class="max-w-screen-lg overflow-hidden">
+                <div class="my-10 swiper driving--principles">
+                    <div class="swiper-wrapper">
+
+                        {% for principle in driving_principles.principles %}
+                            <div class="shadow-sm card bg-darkish text-accent-content swiper-slide">
+                                <figure>
+                                    <img src="/images/driving_principles/{{ principle.image }}" class="object-scale-down h-52" alt="{{ principle.name }}" loading="lazy">
+                                </figure>
+                                <div class="card-body">
+                                    <p class="text-center uppercase card-title">{{ principle.name }}</p>
+                                    <hr class="mb-4 border-magentish"/>
+
+                                    <p class="text-white">
+                                        {{ principle.content | truncate(400) }}
+                                        {% if principle.content | length < 400 %}
+                                            {% for i in range(0, 400 - principle.content | length) %}
+                                &nbsp;
+                                {% endfor %}
+                                        {% endif %}
+                                    </p>
+
+                                </div>
+                            </div>
+                        {% endfor %}
+
+                    </div>
+                    <div class="driving--principles--prev swiper-button-prev"></div>
+                    <div class="driving--principles--next swiper-button-next"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 gap-3 px-1 pb-12 lg:px-6 md:grid-cols-2 xl:grid-cols-3">
+            {% for post in collections.service_examples %}
+                <div class="border-2 card border-darkish">
+                    <figure>
+                        <img src="{{ post.data.banner }}">
+                    </figure>
+                    <div class="card-body">
+                        <h2 class="text-magentish card-title">
+                            {{ post.data.title }}
+                        </h2>
+                        <hr class="mt-1 mb-3 border-darkish"/>
+                        <p class="text-white">{{ post.data.description | truncate(256) }}</p>
+                        <div class="justify-end card-actions">
+                            <a href="{{ post.url }}" class="btn btn-primary">Check it Out</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+    </main>
+
+    <footer class="p-10 text-white border-t footer bg-overdark border-magentish">
+        <div>
+            <span class="footer-title">Company Information</span>
+            <a class="link link-hover" href="/about">About OverScore</a>
+            <a class="link link-hover" href="/services">Our Services</a>
+            <a class="link link-hover" href="#contact--us">Contact Us</a>
+        </div>
+        <div>
+            <span class="footer-title">Legal and Other</span>
+            <a class="link link-hover">Terms of Service</a>
+            <a class="link link-hover">Privacy Policy</a>
+            <a class="link link-hover">Brand Assets</a>
+        </div>
+    </footer>
+    <footer class="flex flex-col px-2 py-4 text-white md:flex-row-reverse md:px-10 footer bg-overdark">
+        <div class="justify-center w-full md:place-self-center md:justify-self-end md:w-fit">
+            <div class="grid grid-flow-col gap-4">
+                <a href="https://www.instagram.com/overscore_media/" aria-name="OverScore on Instagram" target="_blank" rel="noopener noreferrer nofollow">
+                    <ion-icon name="logo-instagram" aria-hidden="true" class="text-2xl"></ion-icon>
+                </a>
+                <a href="https://www.linkedin.com/company/overscore-media" aria-name="OverScore on LinkedIn" target="_blank" rel="noopener noreferrer nofollow">
+                    <ion-icon name="logo-linkedin" aria-hidden="true" class="text-2xl"></ion-icon>
+                </a>
+                <a href="https://github.com/overscore-media" aria-name="OverScore on GitHub" target="_blank" rel="noopener noreferrer nofollow">
+                    <ion-icon name="logo-github" aria-hidden="true" class="text-2xl"></ion-icon>
+                </a>
+            </div>
+        </div>
+        <div class="items-center justify-center w-full grid-flow-col md:justify-start">
+
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 49.725 85"><path style="fill:#cf5986;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" d="M10 15 0 25v20l5 5-5 5v20l10 10h29.725l10-10V25l-10-10zm1.059 11.059h27.609V73.94h-27.61ZM0 8.942V0h49.725l-8.941 8.942z"/></svg>
+
+            <a href="/" class="text-center md:text-left font-aldrich">OverScore Media Corporation</a>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+
+    <script>
+        const collaboratorsSwiper = new Swiper('.collaborators', {
+            loop: true,
+            autoplay: true,
+            breakpoints: {
+                414: {
+                    slidesPerView: 1,
+                    spaceBetween: 5
+                },
+                768: {
+                    slidesPerView: 3,
+                    spaceBetween: 5
+                },
+                1000: {
+                    slidesPerView: 3,
+                    spaceBetween: 10
+                }
+            },
+            navigation: {
+                nextEl: '.collaborators--next',
+                prevEl: '.collaborators--prev'
+            }
+        });
+
+        const techStackSwiper = new Swiper('.tech--stack', {
+            loop: true,
+            autoplay: true,
+            breakpoints: {
+                414: {
+                    slidesPerView: 1,
+                    spaceBetween: 5
+                },
+                768: {
+                    slidesPerView: 3,
+                    spaceBetween: 5
+                },
+                1000: {
+                    slidesPerView: 5,
+                    spaceBetween: 10
+                }
+            },
+            navigation: {
+                nextEl: '.tech--stack--next',
+                prevEl: '.tech--stack--prev'
+            }
+        });
+
+        const principlesSwiper = new Swiper('.driving--principles', {
+            loop: true,
+            autoplay: true,
+            breakpoints: {
+                414: {
+                    slidesPerView: 1,
+                    spaceBetween: 5
+                },
+                768: {
+                    slidesPerView: 2,
+                    spaceBetween: 5
+                },
+                1000: {
+                    slidesPerView: 3,
+                    spaceBetween: 10
+                }
+            },
+            navigation: {
+                nextEl: '.driving--principles--next',
+                prevEl: '.driving--principles--prev'
+            }
+        });
+    </script>

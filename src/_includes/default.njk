@@ -50,8 +50,12 @@ image: /opengraph.png
     </div>
 
     <div id="contact--us" class="modal">
+      <script src="https://www.google.com/recaptcha/api.js" async defer></script>
       <div class="bg-overdark modal-box">
-        <form method="POST" data-netlify="true" name="contact-overscore-media">
+        <form data-netlify-recaptcha="true" method="POST" data-netlify="true" netlify-honeypot="bot-field" name="contact-overscore-media">
+          <p class="hidden">
+            <label>Don’t fill this out if you’re human: <input name="bot-field"/></label>
+          </p>
           <div class="mb-4">
             <label class="block mb-2 text-sm font-bold text-white" for="name">
                         Name
@@ -79,6 +83,8 @@ image: /opengraph.png
               </span>
             </label>
           </div>
+
+          <div class="g-recaptcha" data-sitekey="6LeB3VUaAAAAAJCUS7GZfGhL86gf03shwNgVguQP"></div>
 
           <div class="modal-action">
             <button href="#" class="btn btn-primary" type="submit">Submit</button>

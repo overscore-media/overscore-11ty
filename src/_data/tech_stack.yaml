@@ -25,3 +25,45 @@ tech:
 
   - name: Vue.js
     image: vuejs.svg
+  
+  - name: Rust
+    image: rust.svg
+  
+  - name: Tauri
+    image: tauri.svg
+  
+  - name: Flutter
+    image: flutter.svg
+  
+  - name: Tailwind.CSS
+    image: tailwindcss.svg
+  
+  - name: Quasar
+    image: quasar.svg
+  
+  - name: Inertia.js
+    image: inertiajs.svg
+  
+  - name: PHP
+    image: php.svg
+  
+  - name: Svelte.js
+    image: sveltejs.svg
+
+  - name: Material UI
+    image: materialui.svg
+  
+  - name: React.js
+    image: reactjs.svg
+
+  - name: Alpine.js
+    image: alpinejs.svg
+  
+  - name: Livewire
+    image: livewire.svg
+  
+  - name: Vuetify
+    image: vuetify.svg
+  
+  - name: Laravel
+    image: laravel.svg

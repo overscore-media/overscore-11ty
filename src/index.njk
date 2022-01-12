@@ -7,6 +7,7 @@ layout: default
 
     <!-- title and decorations (im sorry it got really ugly in order to position elements the right way, its not consistent)-->
     <div class="relative h-screen pt-20 lg:w-full">
+
       <!-- dashes -->
       <div value="3" class="absolute z-30 -mt-64 parallax">
         <svg width="40rem" height="40rem" style="margin-left: 60rem;" viewBox="0 0 266 30" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -15,17 +16,22 @@ layout: default
       </div>
 
       <!-- title & dark shape -->
-      <div value="2" style="height: 50vh" class="z-10 flex items-center justify-center w-full px-10 rounded-md h-96 parallax title-card bg-gradient-to-br backdrop-brightness-150 backdrop-saturate-125 from-black/100 to-black/90 backdrop-blur-lg">
-        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" value="2" class="parallax" style="margin-bottom: 10%;" viewBox="0 0 512.818 85.378" height="90%" width="90%">
-          <defs>
-            <linearGradient id="grad1" x1="0%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" style="stop-color:#008DD5;stop-opacity:1"/>
-              <stop offset="100%" style="stop-color:#59CFA2;stop-opacity:1"/>
-            </linearGradient>
-          </defs>
-          <path fill="url(#grad1)" fill-opacity="1" d="M10 15 0 25v20l5 5-5 5v20l10 10h29.725l10-10V25l-10-10zm1.058 11.058h27.609v47.883H11.058zm352.585 9.32-10 10v29.725l10 10h29.725l10-10V45.378l-10-10zm0 10h30v30h-30zM154.506 75.103l10 10h-49.725V35.378h49.725v20l-10 10h-30l10-10h20v-10h-29.725v29.725zm20 10h10V45.378h29.726l10-10h-49.726zm238.862 0h10V45.378h29.725l10-10h-49.725zm59.725-10h29.726l10 10h-49.726V45.378l10-10h39.726v20l-10 10h-30l10-10h20v-10h-29.726zm-119.451 10-10-10h-29.725V45.378h29.725l10-10h-49.725v49.725zM0 8.942h40.784L49.725 0H0Zm214.232 76.161h79.685V50.858l-49.685-16.35v-9.13h49.685v-10h-59.685v25.48l49.685 16.35v17.895h-59.685Z"/>
-          <path fill="url(#grad1)" fill-opacity="1" d="M59.725 35.378v50h29.233l15.767-15.767V35.378h-10v30l-10 10h-15v-40Z"/>
-        </svg>
+      <div value="2" style="height: 50vh" class="relative z-10 flex items-center justify-center w-full px-10 rounded-md h-96 parallax title-card bg-gradient-to-br backdrop-brightness-150 backdrop-saturate-125 from-black/100 to-black/90 backdrop-blur-lg">
+            </div>
+
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" value="2" class="absolute z-20 parallax" style="margin-bottom: 10%; margin-top: -40vh; margin-left: 5%;" viewBox="0 0 512.818 85.378" height="25vh">
+        <defs>
+          <linearGradient id="grad1" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" style="stop-color:#008DD5;stop-opacity:1"/>
+            <stop offset="100%" style="stop-color:#59CFA2;stop-opacity:1"/>
+          </linearGradient>
+        </defs>
+        <path fill="url(#grad1)" fill-opacity="1" d="M10 15 0 25v20l5 5-5 5v20l10 10h29.725l10-10V25l-10-10zm1.058 11.058h27.609v47.883H11.058zm352.585 9.32-10 10v29.725l10 10h29.725l10-10V45.378l-10-10zm0 10h30v30h-30zM154.506 75.103l10 10h-49.725V35.378h49.725v20l-10 10h-30l10-10h20v-10h-29.725v29.725zm20 10h10V45.378h29.726l10-10h-49.726zm238.862 0h10V45.378h29.725l10-10h-49.725zm59.725-10h29.726l10 10h-49.726V45.378l10-10h39.726v20l-10 10h-30l10-10h20v-10h-29.726zm-119.451 10-10-10h-29.725V45.378h29.725l10-10h-49.725v49.725zM0 8.942h40.784L49.725 0H0Zm214.232 76.161h79.685V50.858l-49.685-16.35v-9.13h49.685v-10h-59.685v25.48l49.685 16.35v17.895h-59.685Z"/>
+        <path fill="url(#grad1)" fill-opacity="1" d="M59.725 35.378v50h29.233l15.767-15.767V35.378h-10v30l-10 10h-15v-40Z"/>
+      </svg>
+
+            <div class="absolute top-0 left-0 z-10">
+        <canvas class="three"></canvas>
       </div>
 
       <!-- grey shape -->
@@ -84,7 +90,117 @@ layout: default
     Projects
     </p>
   </div>
+
 </div>
+
+<script type="module">
+  import * as THREE from 'https://cdn.skypack.dev/three@0.136.0';
+
+  // Surprise variables that will help us later
+  let renderer,
+    model,
+    controls;
+
+  const canvas = document.querySelector('.three')
+
+  // Initializing the scene
+  const scene = new THREE.Scene();
+
+  // Adding a Point Light to the scene
+  const light1 = new THREE.PointLight(0xffffff, 1);
+
+  light1
+    .position
+    .set(50, 50, 50);
+
+  scene.add(light1)
+
+  // The group will contain the grid, the Chippy model, and the octahedron
+  const group = new THREE.Group();
+
+  // Setting up the camera
+  const camera = new THREE.PerspectiveCamera(75, window.innerWidths / window.innerHeight, 0.1, 100);
+
+  camera.position.z = 2;
+  camera.position.y = -0.1;
+  camera.position.x = 0;
+
+  camera.aspect = window.innerWidth / window.innerHeight;
+  camera.updateProjectionMatrix();
+
+  // Loading in the GLTF Chippy model
+  const GLTFLoader = (await import ("https://cdn.skypack.dev/three@0.136.0/examples/jsm/loaders/GLTFLoader.js")).GLTFLoader;
+
+  const loader = new GLTFLoader();
+
+  // Loading and adding the Z2 model to the scene
+  loader.load("/gltfs/Z2.glb", (gltf) => {
+    model = gltf.scene;
+
+    model.traverse((node) => {
+      if (!node.isMesh) 
+        return
+      node.material.wireframe = true
+      node
+        .material
+        .color
+        .setHex(0x262626)
+    });
+
+    const boundingBox = new THREE
+      .Box3()
+      .setFromObject(model);
+    const boundingBoxSize = boundingBox
+      .max
+      .sub(boundingBox.min);
+    const height = boundingBoxSize.y;
+    const depth = boundingBoxSize.z;
+
+    model.position.y = -height / 2;
+    model.position.z += depth / 4;
+
+    model.rotation.z += 0.3
+
+    // Giving the model a referenceable name
+    model.name = "Z2";
+
+    // Finally adding the Z2 model to the scene
+    group.add(model);
+    scene.add(group);
+  });
+
+  // Initializing the renderer
+  renderer = new THREE.WebGLRenderer({antialias: true, canvas: canvas, alpha: true});
+
+  renderer.localClippingEnabled = true;
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  renderer.outputEncoding = THREE.sRGBEncoding;
+
+  // Runs every frame
+  const animate = () => {
+    requestAnimationFrame(animate);
+
+    group.rotation.y += 0.001;
+
+    if (renderer) {
+      renderer.render(scene, camera);
+    }
+  };
+
+  const resize = () => {
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+  };
+
+  // Initially resize
+  resize();
+
+  // Begin the render loop
+  animate();
+
+  window.addEventListener("resize", resize);
+</script>
 
 <!-- parallax -->
 <script type="text/javascript">

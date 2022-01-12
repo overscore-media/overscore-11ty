@@ -1,9 +1,14 @@
 ---
-layout: service.njk
+layout: page
 title: Archives of Ajinor
 banner: /images/projects/ajinor/ajinor-banner.png
 description: In the first age, in the first battle, when the shadows first lengthened, one stood. Burned by the embers of Armageddon, his soul blistered by the fires of Hell and tainted beyond ascension, he chose the path of perpetual torment.
 date: 2020-01-08
+collaborators: 
+- Matthew Piercey
+- Joshua Rose
+tech:
+- Vue.js
 ---
 
 In the first age, in the first battle, when the shadows first lengthened, one stood. Burned by the embers of Armageddon, his soul blistered by the fires of Hell and tainted beyond ascension, he chose the path of perpetual torment.

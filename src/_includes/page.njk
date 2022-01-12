@@ -1,0 +1,239 @@
+---
+ogtype: website
+image: /opengraph.png
+---
+
+<!DOCTYPE html>
+<html lang="en_CA">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        {% seo "" %}
+
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="manifest" href="/site.webmanifest">
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+        <meta name="apple-mobile-web-app-title" content="OverScore Media">
+        <meta name="application-name" content="OverScore Media">
+        <meta name="msapplication-TileColor" content="#262626">
+        <meta name="theme-color" content="#262626">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&family=Staatliches&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="/index.css">
+        <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+    </head>
+
+    <body class="overflow-x-hidden font-sans leading-normal tracking-normal text-gray-900">
+
+        <div class="fixed z-50 w-screen mb-2 navbar text-neutral-content bg-overdark lg:bg-transparent">
+            <div class="flex-1 hidden px-2 mx-2 lg:flex">
+                <a href="/" aria-name="Return to Homepage">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 49.725 85"><path style="fill:#cf5986;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" d="M10 15 0 25v20l5 5-5 5v20l10 10h29.725l10-10V25l-10-10zm1.059 11.059h27.609V73.94h-27.61ZM0 8.942V0h49.725l-8.941 8.942z"/></svg>
+                </a>
+            </div>
+            <div class="flex flex-none px-2 mx-2">
+                <nav class="flex items-stretch">
+                    <a class="font-normal btn btn-ghost btn-sm rounded-btn font-aldrich" href="/services">Services</a>
+                    <a class="font-normal btn btn-ghost btn-sm rounded-btn font-aldrich" href="/about">About</a>
+                    <a class="font-normal btn btn-ghost btn-sm rounded-btn font-aldrich" href="#contact--us">Contact</a>
+                </nav>
+            </div>
+        </div>
+
+        <div id="contact--us" class="modal">
+            <div class="bg-overdark modal-box">
+                <p class="text-white">Looking to get started on your project? Shoot us a message!</p>
+                <div class="modal-action">
+                    <a href="#" class="btn btn-circle btn-sm">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-4 h-4 stroke-current">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex justify-center w-screen min-h-screen px-2 pt-24 pb-12 text-white bg-overdark md:px-0">
+            <div class="mx-1 mb-12 prose prose-invert prose-figcaption:text-center prose-figcaption:mt-0 prose-img:mb-3">
+                <h1 class="text-center">{{ title }}</h1>
+                <hr class="mt-1 mb-3"/>
+                <h2 class="mb-6 text-center">Published {{ page.date | postDate }}</h2>
+
+                {% if banner %}
+                    <div class="flex items-center justify-center w-full px-1">
+                        <img class="object-scale-down h-64 lg:h-72" src="{{ banner }}" alt="Decorative project banner" loading="lazy" draggable="false">
+                    </div>
+                {% else %}
+                    <div class="pb-12"></div>
+                {% endif %}
+                {{ content | safe }}
+            </div>
+        </div>
+
+        {% if tech %}
+            <div class="flex flex-col items-center justify-center w-full pb-12 overflow-hidden bg-overdark">
+                <h3 class="pt-6 text-3xl font-semibold text-center text-white font-aldrich">Tech We Used</h3>
+                <div class="w-full max-w-screen-lg overflow-hidden">
+                    <div class="h-32 my-10 swiper tech--stack">
+                        <div class="swiper-wrapper">
+
+                            {% for technology in tech_stack.tech %}
+                                {% for name in tech %}
+                                    {% if name === technology.name %}
+                                        <div class="flex flex-col items-center justify-center swiper-slide">
+                                            <img src="/images/techstack/{{ technology.image }}" class="h-3/4" alt="{{ technology.name }}">
+                                            <p class="w-full pt-2 text-xl font-light text-center uppercase text-greenwich h-1/4 font-aldrich">
+                                                {{ technology.name }}
+                                            </p>
+                                        </div>
+                                    {% endif %}
+                                {% endfor %}
+                            {% endfor %}
+
+                        </div>
+                        <div class="swiper-button-prev tech--stack--prev"></div>
+                        <div class="swiper-button-next tech--stack--next"></div>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+
+        {% if collaborators %}
+            <div class="flex flex-col items-center justify-center w-full overflow-hidden bg-overdark">
+                <h3 class="pt-6 text-3xl font-semibold text-center text-white font-aldrich">Project Collaborators</h3>
+                <div class="w-full max-w-screen-lg overflow-hidden">
+                    <div class="my-10 swiper collaborators--swiper">
+                        <div class="swiper-wrapper">
+                            {% for collaborator in collections.collaborators %}
+                                {% for name in collaborators %}
+                                    {% if name === collaborator.data.name %}
+                                        <div class="shadow-sm card bg-darkish text-accent-content swiper-slide">
+                                            <figure>
+                                                <img src="{{ collaborator.data.picture }}" class="object-scale-down h-52" alt="Profile Picture" loading="lazy">
+                                            </figure>
+                                            <div class="card-body">
+                                                <p class="text-center card-title">{{ collaborator.data.name }}</p>
+                                                <hr class="mb-4 border-magentish"/>
+                                                <ul class="text-white">
+                                                    {% for role in collaborator.data.roles | slice(3) %}
+                                                        <li>{{ role }}</li>
+                                                    {% endfor %}
+                                                    {% if collaborator.data.roles | length < 2 %}
+                                                        <li>&nbsp;</li>
+                                                    {% endif %}
+                                                    {% if collaborator.data.roles | length < 3 %}
+                                                        <li>&nbsp;</li>
+                                                    {% endif %}
+                                                </ul>
+                                                <div class="card-actions">
+                                                    <a href="{{ collaborator.url }}" class="w-full font-bold btn btn-accent text-overdark">Read Bio</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {% endif %}
+                                {% endfor %}
+                            {% endfor %}
+                        </div>
+                        <div class="collaborators--swiper--prev"></div>
+                        <div class="collaborators--swiper--next"></div>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+
+        <footer class="p-10 text-white border-t footer bg-overdark border-magentish">
+            <div>
+                <span class="footer-title">Company Information</span>
+                <a class="link link-hover" href="/about">About OverScore</a>
+                <a class="link link-hover" href="/services">Our Services</a>
+                <a class="link link-hover" href="#contact--us">Contact Us</a>
+            </div>
+            <div>
+                <span class="footer-title">Legal and Other</span>
+                <a class="link link-hover" href="/terms">Terms of Service</a>
+                <a class="link link-hover" href="/privacy">Privacy Policy</a>
+                <a class="link link-hover" href="/brand">Brand Assets</a>
+            </div>
+        </footer>
+        <footer class="flex flex-col px-2 py-4 text-white md:flex-row-reverse md:px-10 footer bg-overdark">
+            <div class="justify-center w-full md:place-self-center md:justify-self-end md:w-fit">
+                <div class="grid grid-flow-col gap-4">
+                    <a href="https://www.instagram.com/overscore_media/" aria-name="OverScore on Instagram" target="_blank" rel="noopener noreferrer nofollow">
+                        <ion-icon name="logo-instagram" aria-hidden="true" class="text-2xl"></ion-icon>
+                    </a>
+                    <a href="https://www.linkedin.com/company/overscore-media" aria-name="OverScore on LinkedIn" target="_blank" rel="noopener noreferrer nofollow">
+                        <ion-icon name="logo-linkedin" aria-hidden="true" class="text-2xl"></ion-icon>
+                    </a>
+                    <a href="https://github.com/overscore-media" aria-name="OverScore on GitHub" target="_blank" rel="noopener noreferrer nofollow">
+                        <ion-icon name="logo-github" aria-hidden="true" class="text-2xl"></ion-icon>
+                    </a>
+                </div>
+            </div>
+            <div class="items-center justify-center w-full grid-flow-col md:justify-start">
+
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 49.725 85"><path style="fill:#cf5986;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" d="M10 15 0 25v20l5 5-5 5v20l10 10h29.725l10-10V25l-10-10zm1.059 11.059h27.609V73.94h-27.61ZM0 8.942V0h49.725l-8.941 8.942z"/></svg>
+
+                <a href="/" class="text-center md:text-left font-aldrich">OverScore Media Corporation</a>
+            </div>
+        </footer>
+
+        <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+
+        <script>
+            const techStackSwiper = new Swiper('.tech--stack', {
+                centerInsufficientSlides: true,
+                breakpoints: {
+                    414: {
+                        slidesPerView: 1,
+                        spaceBetween: 5
+                    },
+                    768: {
+                        slidesPerView: 3,
+                        spaceBetween: 5
+                    },
+                    1000: {
+                        slidesPerView: 5,
+                        spaceBetween: 10
+                    }
+                },
+                navigation: {
+                    nextEl: '.tech--stack--next',
+                    prevEl: '.tech--stack--prev'
+                }
+            });
+
+            const collaboratorsSwiper = new Swiper('.collaborators--swiper', {
+                centerInsufficientSlides: true,
+                breakpoints: {
+                    414: {
+                        slidesPerView: 1,
+                        spaceBetween: 5
+                    },
+                    768: {
+                        slidesPerView: 3,
+                        spaceBetween: 5
+                    },
+                    1000: {
+                        slidesPerView: 3,
+                        spaceBetween: 10
+                    }
+                },
+                navigation: {
+                    nextEl: '.collaborators--swiper--next',
+                    prevEl: '.collaborators--swiper--prev'
+                }
+            });
+        </script>
+
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    </body>
+
+</html>

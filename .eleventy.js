@@ -25,6 +25,7 @@ module.exports = function(eleventyConfig) {
   // Use modified markdown-it config for markdown rendering
   eleventyConfig.setLibrary('md', markdownIt({
     // markdown-it options go here
+    html: true
   }).use(markdownItImageFigures, {
     figcaption: true,
     lazy: true,

@@ -70,14 +70,14 @@ layout: default
         {% for post in collections.service_examples %}
           <div class="w-full overflow-visible rounded-md h-portcard swiper-slide portfolio-card bg-gradient-to-br backdrop-brightness-150 backdrop-saturate-125 from-bluesh/75 to-greenwich/50 backdrop-blur-md">
 
-            <figure class="h-1/2">
+            <figure>
               <img src="{{ post.data.banner }}">
             </figure>
             <h2 class="py-2 text-lg text-center text-darkish lg:text-3xl card-title">
               <a href="{{ post.url }}">{{ post.data.title }}</a>
             </h2>
             <hr class="mt-1 mb-3 border-darkish"/>
-            <p class="px-1 text-darkish lg:text-lg">{{ post.data.description | truncate(140) }}</p>
+            <p class="px-8 text-darkish lg:text-lg">{{ post.data.description | truncate(140) }}</p>
 
           </div>
         {% endfor %}

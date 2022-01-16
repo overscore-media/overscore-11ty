@@ -1,27 +1,22 @@
 tech:
-  - name: Figma
-    image: figma.svg
 
   - name: HTML5
     image: html5.svg
 
-  - name: Inkscape
-    image: inkscape.svg
-
   - name: JavaScript
     image: javascript.svg
 
-  - name: Krtia
-    image: krita.svg
+  - name: PHP
+    image: php.svg
+
+  - name: Sass
+    image: sass.svg
 
   - name: Node.js
     image: nodejs.svg
 
   - name: nuxtjs
     image: nuxtjs.svg
-
-  - name: sass
-    image: sass.svg
 
   - name: Vue.js
     image: vuejs.svg
@@ -44,9 +39,6 @@ tech:
   - name: Inertia.js
     image: inertiajs.svg
   
-  - name: PHP
-    image: php.svg
-  
   - name: Svelte.js
     image: sveltejs.svg
 
@@ -67,3 +59,18 @@ tech:
   
   - name: Laravel
     image: laravel.svg
+
+  - name: Inkscape
+    image: inkscape.svg
+
+  - name: Figma
+    image: figma.svg
+
+  - name: Krita
+    image: krita.svg
+
+  - name: Wix
+    image: wix.svg
+
+  - name: Wordpress
+    image: wordpress.svg

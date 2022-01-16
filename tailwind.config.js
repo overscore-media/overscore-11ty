@@ -41,8 +41,18 @@ module.exports = {
           darkish: '#313235'
         },
         height: {
-          portcard: '40rem',
+          portcard: '20vh',
+          postimg: '30vh',
         },
+        typography: (theme) => ({
+          DEFAULT: {
+            css: {
+              maxWidth: '100vh',
+  
+              // ...
+            },
+          },
+        }),
         fontFamily: {
           'aldrich': ['Aldrich', 'sans-serif'],
           'heading': ['Staatliches', 'monospace'],

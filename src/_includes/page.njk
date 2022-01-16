@@ -61,14 +61,17 @@ image: /opengraph.png
         </div>
 
         <div class="flex justify-center w-screen min-h-screen px-2 pt-24 pb-12 text-white bg-overdark md:px-0">
-            <div class="mx-1 mb-12 prose prose-invert prose-figcaption:text-center prose-figcaption:mt-0 prose-img:mb-3">
+            <div class="w-2/3 mx-1 mb-12 prose prose-invert prose-figcaption:text-center prose-figcaption:mt-0 prose-img:mb-3">
                 <h1 class="text-center">{{ title }}</h1>
                 <hr class="mt-1 mb-3"/>
                 <h2 class="mb-6 text-center">Published {{ page.date | postDate }}</h2>
+                {% if link %}
+                <a class="mb-6 text-center text-magentish hover:text-greenwich" href= {{ link }}>Link: {{ link }}</a>
+                {% endif %}
 
                 {% if banner %}
                     <div class="flex items-center justify-center w-full px-1">
-                        <img class="object-scale-down h-64 lg:h-72" src="{{ banner }}" alt="Decorative project banner" loading="lazy" draggable="false">
+                        <img class="object-scale-down" src="{{ banner }}" alt="Decorative project banner" loading="lazy" draggable="false">
                     </div>
                 {% else %}
                     <div class="pb-12"></div>

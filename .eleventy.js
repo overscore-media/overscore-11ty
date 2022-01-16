@@ -28,7 +28,7 @@ module.exports = function(eleventyConfig) {
   }).use(markdownItImageFigures, {
     figcaption: true,
     lazy: true,
-    classes: 'object-scale-down h-64 lg:h-72 w-full flex justify-center items-center',
+    classes: 'h-postimg flex justify-center items-center',
     async: true
   }));
 

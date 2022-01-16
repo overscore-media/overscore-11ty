@@ -24,7 +24,7 @@ image: /opengraph.png
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&family=Staatliches&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Aldrich&display=swap" rel="stylesheet">
 
         <link rel="stylesheet" href="/index.css">
         <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
@@ -34,9 +34,11 @@ image: /opengraph.png
 
         <div class="fixed z-50 w-screen mb-2 navbar text-neutral-content bg-overdark lg:bg-transparent">
             <div class="flex-1 hidden px-2 mx-2 lg:flex">
-                <a href="/" aria-name="Return to Homepage"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 49.725 85"><path style="fill:#cf5986;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" d="M10 15 0 25v20l5 5-5 5v20l10 10h29.725l10-10V25l-10-10zm1.059 11.059h27.609V73.94h-27.61ZM0 8.942V0h49.725l-8.941 8.942z"/></svg></a>
+                <a href="/" aria-name="Return to Homepage">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 49.725 85"><path style="fill:#cf5986;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" d="M10 15 0 25v20l5 5-5 5v20l10 10h29.725l10-10V25l-10-10zm1.059 11.059h27.609V73.94h-27.61ZM0 8.942V0h49.725l-8.941 8.942z"/></svg>
+                </a>
             </div>
-            <div class="flex flex-none px-2 mx-2">
+            <div class="flex justify-center flex-grow px-2 mx-2 lg:flex-none">
                 <nav class="flex items-stretch">
                     <a class="font-normal btn btn-ghost btn-sm rounded-btn font-aldrich" href="/services">Services</a>
                     <a class="font-normal btn btn-ghost btn-sm rounded-btn font-aldrich" href="/about">About</a>
@@ -46,16 +48,51 @@ image: /opengraph.png
         </div>
 
         <div id="contact--us" class="modal">
+            <script src="https://www.google.com/recaptcha/api.js" async defer></script>
             <div class="bg-overdark modal-box">
-                <p class="text-white">Enim dolorem dolorum omnis atque necessitatibus. Consequatur aut adipisci qui iusto illo eaque. Consequatur repudiandae et. Nulla ea quasi eligendi. Saepe velit autem minima.</p>
-                <div class="modal-action">
-                    <a href="#" class="btn btn-primary">Accept</a>
-                    <a href="#" class="btn">Close</a>
-                </div>
+                <form data-netlify-recaptcha="true" method="POST" data-netlify="true" netlify-honeypot="bot-field" name="contact-overscore-media">
+                    <p class="hidden">
+                        <label>Don’t fill this out if you’re human: <input name="bot-field"/></label>
+                    </p>
+                    <div class="mb-4">
+                        <label class="block mb-2 text-sm font-bold text-white" for="name">
+                        Name
+                        </label>
+                        <input required class="w-full px-3 py-2 leading-tight border rounded shadow appearance-none focus:outline-none focus:shadow-outline" id="name" type="name" name="name" placeholder="Name">
+                    </div>
+                    <div class="mb-4">
+                        <label class="block mb-2 text-sm font-bold text-white" for="email">
+                        Email
+                        </label>
+                        <input required class="w-full px-3 py-2 leading-tight border rounded shadow appearance-none focus:outline-none focus:shadow-outline" id="email" type="email" name="email" placeholder="Email">
+                    </div>
+                    <div class="mb-6">
+                        <label class="block mb-2 text-sm font-bold text-white" for="message">
+                        Message
+                        </label>
+                        <textarea name="message" required class="w-full h-24 px-3 py-2 leading-tight border border-red-500 rounded shadow appearance-none focus:outline-none focus:shadow-outline" id="password" type="text" placeholder="Start writing something, you got this!"></textarea>
+                    </div>
+
+                    <div class="flex items-center mb-6">
+                        <label class="block font-bold text-white">
+                            <input required class="mr-2" type="checkbox">
+                            <span class="text-sm">
+                            I agree to OverScore Media's <a href="/privacy" class="hover:text-magentish">Privacy Policy</a> and <a href="/terms" class="hover:text-magentish">Terms of Service</a>
+                            </span>
+                        </label>
+                    </div>
+
+                    <div class="g-recaptcha" data-theme="dark" data-sitekey="6LeB3VUaAAAAAJCUS7GZfGhL86gf03shwNgVguQP"></div>
+
+                    <div class="modal-action">
+                        <button href="#" class="btn btn-primary" type="submit">Submit</button>
+                        <a href="#" class="btn">Cancel</a>
+                    </div>
+                </form>
             </div>
         </div>
 
-        <div class="flex justify-center w-screen min-h-screen pt-24 pb-12 text-white bg-overdark">
+        <div class="flex justify-center w-screen min-h-screen px-2 pt-24 pb-12 text-white bg-overdark">
             <div class="prose prose-invert">
                 <h1 class="text-center">{{ name }}</h1>
                 <hr class="mt-1 mb-3"/>
@@ -76,9 +113,9 @@ image: /opengraph.png
             </div>
             <div>
                 <span class="footer-title">Legal and Other</span>
-                <a class="link link-hover">Terms of Service</a>
-                <a class="link link-hover">Privacy Policy</a>
-                <a class="link link-hover">Brand Assets</a>
+                <a class="link link-hover" href="/terms">Terms of Service</a>
+                <a class="link link-hover" href="/privacy">Privacy Policy</a>
+                <a class="link link-hover" href="/brand">Brand Assets</a>
             </div>
         </footer>
         <footer class="flex flex-col px-2 py-4 text-white md:flex-row-reverse md:px-10 footer bg-overdark">

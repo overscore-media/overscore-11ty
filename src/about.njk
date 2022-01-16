@@ -118,7 +118,7 @@ layout: default.njk
 <div class="absolute shadow-2xl crawl--wrapper">
 
     <div x-data class="absolute z-0 w-screen h-screen" aria-hidden="true">
-        <video playsinline autoplay muted loop class="w-full">
+        <video playsinline autoplay muted loop class="object-cover w-full h-full">
             <source src="/stars.mp4" type="video/mp4"/>
         </video>
     </div>
@@ -250,9 +250,9 @@ We trust only the finest contractors for our jobs. Here is a full list of our ev
     </div>
     <div>
         <span class="footer-title">Legal and Other</span>
-        <a class="link link-hover">Terms of Service</a>
-        <a class="link link-hover">Privacy Policy</a>
-        <a class="link link-hover">Brand Assets</a>
+        <a class="link link-hover" href="/terms">Terms of Service</a>
+        <a class="link link-hover" href="/privacy">Privacy Policy</a>
+        <a class="link link-hover" href="/brand">Brand Assets</a>
     </div>
 </footer>
 <footer class="flex flex-col px-2 py-4 text-white md:flex-row-reverse md:px-10 footer bg-overdark">

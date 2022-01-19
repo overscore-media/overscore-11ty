@@ -29,7 +29,7 @@ module.exports = function(eleventyConfig) {
   }).use(markdownItImageFigures, {
     figcaption: true,
     lazy: true,
-    classes: 'h-postimg flex justify-center items-center',
+    classes: 'h-postimg max-h-postimg',
     async: true
   }));
 

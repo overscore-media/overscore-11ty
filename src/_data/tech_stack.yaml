@@ -1,20 +1,4 @@
 tech:
-
-  - name: HTML5
-    image: html5.svg
-
-  - name: JavaScript
-    image: javascript.svg
-
-  - name: PHP
-    image: php.svg
-
-  - name: Sass
-    image: sass.svg
-
-  - name: Node.js
-    image: nodejs.svg
-
   - name: nuxtjs
     image: nuxtjs.svg
 
@@ -74,3 +58,21 @@ tech:
 
   - name: Wordpress
     image: wordpress.svg
+
+  - name: Stripe
+    image: stripe.svg
+
+  - name: HTML5
+    image: html5.svg
+
+  - name: JavaScript
+    image: javascript.svg
+
+  - name: PHP
+    image: php.svg
+
+  - name: Sass
+    image: sass.svg
+
+  - name: Node.js
+    image: nodejs.svg

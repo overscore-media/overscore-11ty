@@ -3,7 +3,7 @@ layout: page
 title: Buxton & Dawe
 banner: /images/projects/buxtondawe/buxton-banner.png
 link: https://buxtonanddawe.com/
-description: A clean and modern upgrade for an electrical contracting company. Built with Wordpress and Elementor, this is an excellent way to showcase the copmany's services and get customers in their door
+description: A clean and modern upgrade for an electrical contracting company. Built with Wordpress and Elementor, this is an excellent way to showcase the company's services and get customers in their door
 date: 2022-01-12
 collaborators: 
 - Bryce Hynes
@@ -20,7 +20,7 @@ Looking for a simple business-card site to showcase your work? Look no further! 
 
 # Features
 
-Buxton & Dawe is an established electrical contracting copmany with over 60 years of service in the GTA area and across Ontario. These were our goals with this project:
+Buxton & Dawe is an established electrical contracting company with over 60 years of service in the GTA area and across Ontario. These were our goals with this project:
 
 - Provide visitors with an overview of the company's services
 - Display examples of past contracts

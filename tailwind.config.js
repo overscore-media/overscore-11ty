@@ -61,6 +61,11 @@ module.exports = {
         minHeight: (theme) => ({
           ...theme('spacing')
         }),
+        
+        maxHeight: (theme) => ({
+          ...theme('spacing'),
+          'postimg': '20vh'
+        })
       },
     },
     variants: {

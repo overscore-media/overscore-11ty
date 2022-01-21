@@ -2,7 +2,7 @@
 layout: page
 title: Buxton & Dawe
 banner: /images/projects/buxtondawe/buxton-banner.png
-link: https://buxtonanddawe.com/
+link: https://dev.beehynes.com/buxton-and-dawe/
 description: A clean and modern upgrade for an electrical contracting company. Built with Wordpress and Elementor, this is an excellent way to showcase the company's services and get customers in their door
 date: 2022-01-12
 collaborators: 
